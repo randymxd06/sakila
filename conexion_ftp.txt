@@ -1,0 +1,10 @@
+Mi pagina web: randymxd08.000webhostapp.com
+
+Conexión FTP
+
+Servidor: files.000webhost.com
+Nombre usuario: xtudioplay
+Contraseña: aprendiendo_php
+
+
+Información de Base de datos
