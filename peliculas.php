@@ -13,7 +13,3 @@ $objeto = new stdClass();
 $objeto -> nombre = "Randy";
 $objeto -> edad = 19;
 echo "Hola, mi nombre es {$objeto->nombre} tengo {$objeto -> edad} años de edad";
-
-
-
-?>
