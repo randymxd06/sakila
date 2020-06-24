@@ -27,12 +27,10 @@
 
 
                     <label class="mt-3" for="correo">Correo:</label>
-                    <input  type="email" name="correo" id="coreeo" class="form-control" placeholder="Escribe tu correo">
+                    <input  type="email" name="correo" id="correo" class="form-control" placeholder="Escribe tu correo">
 
                     <label class="mt-3" for="direccion">Dirección:</label>
-                    <select class="form-select" name="direccion" id="direccion">
-                        <option value="">Aqui va el listado de la ciudad desde MySQL</option>
-                    </select>
+                    <input  type="text" name="direccion" id="direccion" class="form-control" placeholder="Escribe tu dirección">
 
                     <div class="form-check mt-3">
                         <input class="form-check-input" type="checkbox" name="activo" id="activo">

@@ -14,11 +14,11 @@
 
             <form action="" method="get" >
 
-                <label for="direccion">Direccion:</label>
-                <input  type="text" name="direccion" id="direccion" class="form-control" placeholder="Escribe tu direccion">
+                <label mt-3 for="direccion">Direccion:</label>
+                <input  type="text" name="direccion" id="direccion" class="form-control" placeholder="Escribe tu dirección">
 
                 <label class="mt-3" for="direccion2">Direccion 2:</label>
-                <input type="text" name="direccion2" id="direccion2" class="form-control" placeholder="Escribe otra direccion">
+                <input type="text" name="direccion2" id="direccion2" class="form-control" placeholder="Escribe otra dirección">
 
                 <label class="mt-3" for="distrito">Distrito:</label>
                 <input type="text" name="distrito" id="distrito" class="form-control" placeholder="Escribe tu distrito">
