@@ -31,10 +31,10 @@
                 <label class="mt-3" for="codigoPostal">Código Postal:</label>
                 <input type="text" name="codigoPostal" id="codigoPostal" class="form-control" placeholder="Escribe tu código postal">
 
-                <label class="mt-3" for="telefono">Teléfono</label>
+                <label class="mt-3" for="telefono">Teléfono:</label>
                 <input type="tel" name="telefono" id="telefono" class="form-control" placeholder="Escribe tu teléfono">
 
-                <label class="mt-3" for="ubicacion">Ubicación</label>
+                <label class="mt-3" for="ubicacion">Ubicación:</label>
                 <input type="text" name="ubicacion" id="ubicacion" class="form-control" placeholder="Escribe tu ubicación">
 
 
@@ -47,5 +47,7 @@
     </div>
 
 </div>
+
+<hr>
 
 <?php include_once "partes/parte_footer.php" ?>
