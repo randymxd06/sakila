@@ -8,28 +8,34 @@ $listado = [
     "cliente" => ["Cliente","fa fa-user-circle"],
     "pelicula" => ["Película","fa fa-film"],
     "idioma" => ["Idioma","fa fa-language"],
-    "personal" => ["Personal","fa fa-users"]
+    "personal" => ["Personal","fa fa-users"],
+    "categoria" => ["Categoría", "fa fa-tags"],
+    "tienda" => ["Tienda", "fa fa-shopping-cart"]
 ];
 
 //echo "-----------------------------------------------";
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <div class="container-fluid">
+    <div class="container">
 
-        <a class=" mr-5" style="font-size: 25px; text-decoration: none; color: gray";  href="index.php">Sakila's Movies</a>
+        <a class="navbar-brand" style="font-size: 25px" href="index.php">Sakila's Movies</a>
 
-        <div align="center" class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <ul class="navbar-nav" style="font-size: 18px">
+        <div align="center" style="font-size: 18px" class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav">
                 <?php
                 foreach ($listado as $nombreArchivo => $pagina){
                     $icono = $pagina[1];
                     $textPagina = $pagina[0];
-                    echo "<li class=\" mr-5 \"><a class=\"nav-link col-sm-12\" href=\"{$nombreArchivo}.php\">
-                    <i class=\"{$icono}\" aria-hidden=\"true\"></i>{$textPagina}
+                    echo "<li class=\"\"><a class=\"nav-link\" href=\"{$nombreArchivo}.php\">
+                    <i class=\"{$icono}\" aria-hidden=\"true\"></i> {$textPagina}
                     </a>
                     </li>";
                 }
@@ -40,4 +46,4 @@ $listado = [
 
     </div>
 
-</nav>
+    </nav>

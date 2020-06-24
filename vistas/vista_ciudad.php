@@ -4,7 +4,6 @@
 
 <?php include_once "partes/parte_menu.php"?>
 
-<h1 style="text-align: center">Bienvenidos a la página <?php echo $nombrePagina; ?> </h1>
+<h1 class="mt-5" align="center">Bienvenidos a la página <?php echo $nombrePagina; ?> </h1>
 
-</body>
-</html>
+<?php include_once "partes/parte_footer.php" ?>
