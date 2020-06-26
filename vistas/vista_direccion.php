@@ -29,7 +29,13 @@
 
                 <label class="mt-3" for="ciudad">Ciudad:</label>
                 <select class="form-select" name="ciudad" id="ciudad">
-                    <option value="">Aqui va el listado de la ciudad desde MySQL</option>
+                    <option value="">Seleccione una ciudad</option>
+                    <?php
+
+                    foreach ($ciudades as $ciudad)
+                        echo "<option value=\"{$ciudad['city_id']}\">{$ciudad['city']}</option>";
+                    
+                    ?>
                 </select>
 
                 <label class="mt-3" for="codigoPostal">Código Postal:</label>

@@ -4,13 +4,10 @@ require_once "funciones/ayudante.php";
 
 $nombrePagina = "principal";
 
-//Declarar variables//
-$nombre = $_GET['inputNombre'] ?? "";
-$edad = $_GET['inputEdad'] ?? "";
-$ciudad = $_GET['inputCiudad'] ?? "";
-$q = $_GET['q'] ?? "";
-$monto = $_GET['monto'] ?? "";
+//Incluir los modelos//
+require_once "modelos/modelo_actor.php";
 
+//$actores = obtenerActores($conexion);
 
 //Incluir la vista//
 include_once "vistas/vista_principal.php";

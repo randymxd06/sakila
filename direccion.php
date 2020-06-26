@@ -4,6 +4,11 @@ $nombrePagina = "dirección";
 
 require_once "funciones/ayudante.php";
 
+//Incluir los modelos//
+require_once "modelos/modelo_ciudad.php";
+
+$ciudades = obtenerCiudades($conexion);
+
 $direccion = $_GET['direccion'] ?? "";
 $direccion2 = $_GET['direccion2'] ?? "";
 $distrito = $_GET['distrito'] ?? "";
