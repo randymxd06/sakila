@@ -40,7 +40,12 @@
 
                     <label class="mt-3" for="tienda">Tienda:</label>
                     <select class="form-select" name="tienda" id="tienda">
-                        <option value="">Aqui va el listado de la ciudad desde MySQL</option>
+                        <option value="">Seleccione una tienda</option>
+
+                        <?php
+                        foreach ($tiendas as $tienda)
+                            echo "<option value=\"{$tienda['store_id']}\">{$tienda['store_id']}</option>";
+                        ?>
                     </select>
 
                     <div class="form-check mt-3">

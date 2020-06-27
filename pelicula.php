@@ -4,6 +4,11 @@ $nombrePagina = "película";
 
 require_once "funciones/ayudante.php";
 
+//Incluyo el modelo//
+require_once "modelos/modelo_idioma.php";
+$idiomas = obtenerIdiomas($conexion);
+
+//Declaro variables para obtener datos//
 $pelicula = $_GET['pelicula'] ?? "";
 $descripcion = $_GET['descripcion'] ?? "";
 $añoLanzamiento = $_GET['añoLanzamiento'] ?? "";

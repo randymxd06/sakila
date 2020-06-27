@@ -20,7 +20,12 @@
 
                 <label class="mt-3" for="personal">Personal:</label>
                 <select class="form-select" name="personal" id="personal">
-                    <option value="">Aqui va el listado de la ciudad desde MySQL</option>
+                    <option value="">Selecciona un personal</option>
+                    <?php
+
+                    foreach ($personales as $personal)
+                        echo "<option value=\"{$personal['staff_id']}\">{$personal['first_name, last_name']}</option>";
+                    ?>
                 </select>
 
                 <label class="mt-3" for="direccion">Direccion:</label>

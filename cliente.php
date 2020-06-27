@@ -4,6 +4,11 @@ $nombrePagina = "cliente";
 
 require_once "funciones/ayudante.php";
 
+//Incluyo el modelo tienda//
+require_once "modelos/modelo_tienda.php";
+$tiendas = obtenerTiendas($conexion);
+
+//Declaro variables para obtener datos//
 $tienda = $_GET['tienda'] ?? "";
 $primerNombre = $_GET['primerNombre'] ?? "";
 $apellido = $_GET['apellido'] ?? "";

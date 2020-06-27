@@ -23,7 +23,14 @@
 
                     <label class="mt-3" for="pais">País:</label>
                     <select class="form-select" name="pais" id="pais">
-                        <option value="">Aqui va el listado de la ciudad desde MySQL</option>
+                        <option value="">Selecciona un país</option>
+                        <?php
+
+                        foreach ($paises as $pais)
+                            echo "<option value=\"{$pais['country_id']}\">{$pais['country']}</option>"
+
+                        ?>
+
                     </select>
 
 

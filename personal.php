@@ -4,6 +4,10 @@ $nombrePagina = "personal";
 
 require_once "funciones/ayudante.php";
 
+require_once "modelos/modelo_tienda.php";
+$tiendas = obtenerTiendas($conexion);
+
+//Declaro variables para obtener informacion//
 $nombre = $_GET['nombre'] ?? "";
 $apellido = $_GET['apellido'] ?? "";
 $direccion = $_GET['direccion'] ?? "";

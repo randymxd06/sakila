@@ -19,8 +19,15 @@
                 <form action="" method="get" >
 
                     <label class="mt-3" for="idioma">Nombre del Idioma:</label>
+
                     <select class="form-select" name="idioma" id="idioma">
-                        <option value="">Aqui va el listado de la ciudad desde MySQL</option>
+                        <option value="">Selecciona un idioma</option>
+                        <?php
+
+                        foreach ($idiomas as $idioma)
+                            echo "<option value=\"{$idioma['language_id']}\">{$idioma['name']}</option>";
+
+                        ?>
                     </select>
 
                     <button type="submit" name="btnGuardarIdioma" class="btn btn-secondary mt-4">Guardar Datos</button>

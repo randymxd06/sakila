@@ -4,6 +4,13 @@ $nombrePagina = "ciudad";
 
 require_once "funciones/ayudante.php";
 
+//Incluir los modelos//
+require_once "modelos/modelo_pais.php";
+
+$paises = obtenerPaises($conexion);
+
+
+//Declaro variables para obtener los datos//
 $ciudad = $_GET['ciudad'] ?? "";
 $pais = $_GET['pais'] ?? "";
 

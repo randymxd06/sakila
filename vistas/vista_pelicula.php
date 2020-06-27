@@ -29,16 +29,20 @@
 
                     <label class="mt-3" for="idioma">Idioma:</label>
                     <select class="form-select" name="idioma" id="idioma">
-                        <option value="">Aqui va el listado de la ciudad desde MySQL</option>
+                        <option value="">Selecciona un idioma</option>
+                        <?php
+
+                        foreach ($idiomas as $idioma)
+                            echo "<option value=\"{$idioma['language_id']}\">{$idioma['name']}</option>";
+
+                        ?>
                     </select>
 
                     <label class="mt-3" for="duracionAlquiler">Duración del alquiler:</label>
                     <input type="datetime-local" name="duracionAlquiler" id="duracionAlquiler" class="form-control">
 
                     <label class="mt-3" for="tarifaAlquiler">Tarifa del alquiler:</label>
-                    <select class="form-select" name="tarifaAlquiler" id="tarifaAlquiler">
-                        <option value="">Aqui va el listado de la ciudad desde MySQL</option>
-                    </select>
+                    <input type="text" name="tarifaAlquiler" id="tarifaAlquiler" class="form-control" placeholder="Escribe la tarifa de alquiler">
 
                     <label class="mt-3" for="costoReemplazo">Costo de reemplazo:</label>
                     <input type="text" name="costoReemplazo" id="costoReemplazo" class="form-control" placeholder="Escribe el costo de reemplazo">
