@@ -6,6 +6,8 @@ $nombrePagina = "tienda";
 
 require_once "modelos/modelo_personal.php";
 $personales = obtenerPersonal($conexion);
+require_once "modelos/modelo_direccion.php";
+$direcciones = obtenerDirecciones($conexion);
 
 //Declaro variables para obtener informacion//
 $personal = $_GET['personal'] ?? "";

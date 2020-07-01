@@ -28,9 +28,15 @@
                     ?>
                 </select>
 
-                <label class="mt-3" for="direccion">Direccion:</label>
-                <input  type="text" name="direccion" id="direccion" class="form-control" placeholder="Escribe tu dirección">
+                <label class="mt-3" for="direccion">Dirección:</label>
+                <select class="form-select" name="direccion" id="direccion">
+                    <option value="">Selecciona una dirección</option>
+                    <?php
 
+                    foreach ($direcciones as $direccion)
+                        echo "<option value=\"{$direccion['address_id']}\">{$direccion['address']}</option>";
+                    ?>
+                </select>
                 <button type="submit" name="btnGuardarTienda" class="btn btn-secondary mt-4">Guardar Datos</button>
 
             </form>

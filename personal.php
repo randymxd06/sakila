@@ -4,6 +4,8 @@ $nombrePagina = "personal";
 
 require_once "funciones/ayudante.php";
 
+require_once "modelos/modelo_direccion.php";
+$direcciones = obtenerDirecciones($conexion);
 require_once "modelos/modelo_tienda.php";
 $tiendas = obtenerTiendas($conexion);
 

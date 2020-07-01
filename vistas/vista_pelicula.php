@@ -27,6 +27,17 @@
                     <label class="mt-3" for="añoLanzamiento">Año de lanzamiento:</label>
                     <input type="text" name="añoLanzamiento" id="añoLanzamiento" class="form-control" placeholder="Escribe el año de lanzamiento">
 
+                    <label class="mt-3" for="idiomaOriginal">Idioma Original:</label>
+                    <select class="form-select" name="idiomaOriginal" id="idiomaOriginal">
+                        <option value="">Selecciona un idioma</option>
+                        <?php
+
+                        foreach ($idiomas as $idioma)
+                            echo "<option value=\"{$idioma['language_id']}\">{$idioma['name']}</option>";
+
+                        ?>
+                    </select>
+
                     <label class="mt-3" for="idioma">Idioma:</label>
                     <select class="form-select" name="idioma" id="idioma">
                         <option value="">Selecciona un idioma</option>

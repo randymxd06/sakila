@@ -25,9 +25,15 @@
                     <input  type="text" name="apellido" id="apellido" class="form-control" placeholder="Escribe tu apellido">
 
                     <label class="mt-3" for="direccion">Dirección:</label>
-                    <input  type="text" name="direccion" id="direccion" class="form-control" placeholder="Escribe tu direccion">
+                    <select class="form-select" name="direccion" id="direccion">
+                        <option value="">Selecciona una dirección</option>
+                        <?php
 
-                    <div class="form-file mt-3">
+                        foreach ($direcciones as $direccion)
+                            echo "<option value=\"{$direccion['address_id']}\">{$direccion['address']}</option>";
+                        ?>
+                    </select>
+                    <div class="form-file mt-4">
                         <input type="file" class="form-file-input" id="foto" name="foto">
                         <label class="form-file-label" for="foto">
                             <span class="form-file-text">Selecciona una foto...</span>
