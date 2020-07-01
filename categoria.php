@@ -1,6 +1,9 @@
 <?php
 
 require_once "funciones/ayudante.php";
+require_once "modelos/modelo_categoria.php";
+
+$categorias = obtenerCategorias($conexion);
 
 $nombrePagina = "categoría";
 

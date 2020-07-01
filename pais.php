@@ -3,6 +3,8 @@
 $nombrePagina = "país";
 
 require_once "funciones/ayudante.php";
+require_once "modelos/modelo_pais.php";
+$paises = obtenerPaises($conexion);
 
 $pais = $_GET['pais'] ?? "";
 

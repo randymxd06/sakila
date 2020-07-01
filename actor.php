@@ -3,6 +3,9 @@
 $nombrePagina = "actor";
 
 require_once "funciones/ayudante.php";
+require_once "modelos/modelo_actor.php";
+
+$actores = obtenerActores($conexion);
 
 //Declarar variables//
 $nombreActor = $_GET['inputNombreActor'] ?? "";

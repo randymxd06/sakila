@@ -16,14 +16,48 @@
 
             <div class="col-md-5">
 
-                <form action="" method="get" >
+                <div class="row">
+                    <form action="" method="get" >
 
-                    <label for="pais">Nombre del País:</label>
-                    <input  type="text" name="pais" id="pais" class="form-control" placeholder="Escribe el nombre del país">
+                        <label for="pais">Nombre del País:</label>
+                        <input  type="text" name="pais" id="pais" class="form-control" placeholder="Escribe el nombre del país">
 
-                    <button type="submit" name="btnGuardarPais" class="btn btn-secondary mt-4">Guardar Datos</button>
+                        <button type="submit" name="btnGuardarPais" class="btn btn-secondary mt-4">Guardar Datos</button>
 
-                </form>
+                    </form>
+                </div>
+
+                <hr>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <table class="table table-striped table-hover">
+
+                            <thead>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre del Pais</th>
+                            </thead>
+
+                            <tbody>
+
+                            <?php
+                            foreach ($paises as $pais){
+                                echo "<tr>
+                                <th scope=\"row\">{$pais['country_id']}</th>
+                                <td>{$pais['country']}</td>
+                            </tr>";
+                            }
+                            ?>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
 
             </div>
 
