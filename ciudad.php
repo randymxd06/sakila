@@ -6,7 +6,9 @@ require_once "funciones/ayudante.php";
 
 //Incluir los modelos//
 require_once "modelos/modelo_pais.php";
+require_once "modelos/modelo_ciudad.php";
 
+$ciudades = obtenerCiudades($conexion);
 $paises = obtenerPaises($conexion);
 
 
