@@ -1,5 +1,4 @@
-.fondo{
-    background-image: url('../images/');
-    background-repeat: no-repeat;
-    background-size: cover;
+.activo{
+    background: black;
+    color: white;
 }

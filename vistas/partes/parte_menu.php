@@ -31,10 +31,15 @@ $listado = [
 
             <ul class="navbar-nav">
                 <?php
+                $url = $_SERVER['REQUEST_URI'];
+                $paginaActual = "";
                 foreach ($listado as $nombreArchivo => $pagina){
+                    if(strpos($url, $nombreArchivo)){
+                        $paginaActual = 'activo';
+                    }
                     $icono = $pagina[1];
                     $textPagina = $pagina[0];
-                    echo "<li class=\"\"><a class=\"nav-link\" href=\"{$nombreArchivo}.php\">
+                    echo "<li class=\"\"><a class=\"nav-link {$paginaActual}\" href=\"{$nombreArchivo}.php\">
                     <i class=\"{$icono}\" aria-hidden=\"true\"></i> {$textPagina}
                     </a>
                     </li>";
