@@ -6,7 +6,9 @@ require_once "funciones/ayudante.php";
 
 //Incluir los modelos//
 require_once "modelos/modelo_ciudad.php";
+require_once "modelos/modelo_direccion.php";
 
+$direcciones = obtenerDirecciones($conexion);
 $ciudades = obtenerCiudades($conexion);
 
 $direccion = $_GET['direccion'] ?? "";

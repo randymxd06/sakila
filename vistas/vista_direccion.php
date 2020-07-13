@@ -52,6 +52,50 @@
 
             </form>
 
+            <hr>
+
+            <div class="row mt-3">
+
+                <div class="col-md-12">
+
+                    <table class="table table-striped table-hover">
+
+                        <thead>
+                        <th scope="col">ID de la Dirección</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Dirección 2</th>
+                        <th scope="col">Distrito</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Código Postal</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Ubicación</th>
+                        </thead>
+
+                        <tbody>
+
+                        <?php
+                        foreach ($direcciones as $direccion){
+                            echo "<tr>
+                                <th scope=\"row\">{$direccion['address_id']}</th>
+                                <td>{$direccion['address']}</td>
+                                <td>{$direccion['address2']}</td>
+                                <td>{$direccion['district']}</td>
+                                <td>{$direccion['city']}</td>
+                                <td>{$direccion['postal_code']}</td>
+                                <td>{$direccion['phone']}</td>
+                                <td>{$direccion['location']}</td>
+                            </tr>";
+                        }
+                        ?>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>

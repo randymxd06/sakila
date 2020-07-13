@@ -59,7 +59,7 @@
                     <input type="text" name="costoReemplazo" id="costoReemplazo" class="form-control" placeholder="Escribe el costo de reemplazo">
 
                     <label for="clasificacion" class="form-label mt-3">Clasificación:</label>
-                    <input type="range" class="form-range" min="1" max="5" id="clasificacion" name="clasificacion">
+                    <input type="text" name="clasificacion" id="clasificacion" class="form-control" placeholder="Escribe la clasificacion">
 
                     <label class="mt-3" for="duracionPelicula">Duración de la película:</label>
                     <input type="time" name="duracionPelicula" id="duracionPelicula" class="form-control">
@@ -70,6 +70,56 @@
                     <button type="submit" name="btnGuardarPelicula" class="btn btn-secondary mt-3">Guardar Datos</button>
 
                 </form>
+
+                <hr>
+
+                <div class="row mt-3">
+
+                    <div class="col-md-12">
+
+                        <table class="table table-striped table-hover">
+
+                            <thead>
+                            <th scope="col">ID de la Película</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Año de lanzamiento</th>
+                            <th scope="col">Idioma</th>
+                            <th scope="col">Idioma Original</th>
+                            <th scope="col">Duración del Alquiler</th>
+                            <th scope="col">Tarifa del Alquiler</th>
+                            <th scope="col">Costo de Reemplazo</th>
+                            <th scope="col">Clasificación</th>
+                            <th scope="col">Duración de la película</th>
+                            <th scope="col">Características de la película</th>
+                            </thead>
+
+                            <tbody>
+
+                            <?php
+                            foreach ($peliculas as $pelicula){
+                                echo "<tr>
+                                <th scope=\"row\">{$pelicula['film_id']}</th>
+                                <td>{$pelicula['title']}</td>
+                                <td>{$pelicula['release_year']}</td>
+                                <td>{$pelicula['Idioma']}</td>
+                                <td>{$pelicula['Idioma_Original']}</td>
+                                <td>{$pelicula['rental_duration']}</td>
+                                <td>{$pelicula['rental_rate']}</td>
+                                <td>{$pelicula['replacement_cost']}</td>
+                                <td>{$pelicula['rating']}</td>
+                                <td>{$pelicula['length']}</td>
+                                <td>{$pelicula['special_features']}</td>
+                            </tr>";
+                            }
+                            ?>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
 
             </div>
 

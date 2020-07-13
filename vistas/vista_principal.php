@@ -1,6 +1,6 @@
 <?php include_once "partes/parte_head.php"?>
 
-<body class="fondo">
+<body>
 
 <?php include_once "partes/parte_menu.php"?>
 

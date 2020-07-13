@@ -53,6 +53,46 @@
 
                 </form>
 
+                <hr>
+
+                <div class="row mt-3">
+
+                    <div class="col-md-12">
+
+                        <table class="table table-striped table-hover">
+
+                            <thead>
+                            <th scope="col">ID del Cliente</th>
+                            <th scope="col">ID de la Tienda</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Dirección</th>
+                            </thead>
+
+                            <tbody>
+
+                            <?php
+                            foreach ($clientes as $cliente){
+                                echo "<tr>
+                                <th scope=\"row\">{$cliente['customer_id']}</th>
+                                <td>{$cliente['store_id']}</td>
+                                <td>{$cliente['first_name']}</td>
+                                <td>{$cliente['last_name']}</td>
+                                <td>{$cliente['email']}</td>
+                                <td>{$cliente['address']}</td>
+                            </tr>";
+                            }
+                            ?>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>

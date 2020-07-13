@@ -4,8 +4,11 @@ $nombrePagina = "película";
 
 require_once "funciones/ayudante.php";
 
-//Incluyo el modelo//
+//Incluyo los modelos//
 require_once "modelos/modelo_idioma.php";
+require_once "modelos/modelo_pelicula.php";
+
+$peliculas = obtenerPeliculas($conexion);
 $idiomas = obtenerIdiomas($conexion);
 
 //Declaro variables para obtener datos//

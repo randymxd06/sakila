@@ -4,8 +4,11 @@ $nombrePagina = "cliente";
 
 require_once "funciones/ayudante.php";
 
-//Incluyo el modelo tienda//
+//Incluyo los modelos//
 require_once "modelos/modelo_tienda.php";
+require_once "modelos/modelo_cliente.php";
+
+$clientes = obtenerClientes($conexion);
 $tiendas = obtenerTiendas($conexion);
 
 //Declaro variables para obtener datos//
