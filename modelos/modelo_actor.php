@@ -9,3 +9,11 @@ function obtenerActores($conexion){
     return $conexion->query($sql)->fetchAll();
 
 }
+
+function insertarActores($conexion, $datos){
+
+    $sql = "INSERT INTO actor (first_name, last_name) VALUES (:inputNombreActor, :inputApellidoActor);";
+
+    return $conexion->prepare($sql)->execute($datos);
+
+}

@@ -14,17 +14,18 @@ $dbname = "sakila";
 $usuario = "root";
 $password = "rayquaza51";
 
-/*$ajustes = [
-    19 => 2
-];*/
+$ajustes = [
+    19 => 2, //Devuelve un array con los nombres de las columnas de los resultados de la BD.//
+    3 => 2 //Nos genera excepciones cuando hay errores en los queries//
+];
 
 $errores = [];
 
 try{
-    $conexion = new PDO("mysql:host={$host};dbname={$dbname}", $usuario, $password);
+    $conexion = new PDO("mysql:host={$host}; dbname={$dbname}", $usuario, $password);
 }catch(PDOException $exception){
-    //throw new Exception("Hubo un error al conectarnos a la base de datos: {$exception}");
-    array_push($errores, $exception -> getMessage());
+    throw new Exception("Hubo un error al conectarnos a la base de datos: {$exception->getMessage()}");
+    //array_push($errores, $exception -> getMessage());
 }
 
 
