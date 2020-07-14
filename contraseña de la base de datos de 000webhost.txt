@@ -1,0 +1,11 @@
+//Valores de mi base de datos de 000webhost//
+$host = "localhost";
+$dbname = "id14138384_sakila";
+$usuario = "id14138384_root";
+$password = "j3NVvSi{6U6\mFqA";
+
+//Valores de mi base de datos local (mi pc)//
+$host = "localhost";
+$dbname = "sakila";
+$usuario = "root";
+$password = "rayquaza51";
