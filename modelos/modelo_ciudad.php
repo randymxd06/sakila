@@ -11,3 +11,11 @@ function obtenerCiudades($conexion){
     return $conexion->query($sql)->fetchAll();
     
 }
+
+function insertarCiudades($conexion, $datos){
+
+    $sql = "INSERT INTO city (city, country_id) VALUES (:ciudad, :pais)";
+
+    return $conexion->prepare($sql)->execute($datos);
+
+}
