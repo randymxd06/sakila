@@ -9,3 +9,11 @@ function obtenerPersonal($conexion){
     return $conexion->query($sql)->fetchAll();
 
 }
+
+function insertarPersonal($conexion, $datos){
+
+    $sql = "";
+
+    return $conexion->prepare($sql)->execute($datos);
+
+}

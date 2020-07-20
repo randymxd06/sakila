@@ -72,6 +72,28 @@
 
                 </form>
 
+                <?php
+
+                if(isset($error)){
+                    echo "<div class=\"alert alert-danger alert-dismissible fade show mt-3\" role=\"alert\">
+                            {$error}
+                            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                                <span aria-hidden=\"true\">&times;</span>
+                            </button>
+                        </div>";
+                }
+
+                if(isset($personalInsertado)){
+                    echo "<div class=\"alert alert-success alert-dismissible fade show mt-3\" role=\"alert\">
+                            Los datos del personal se han insertado correctamente.
+                            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                                <span aria-hidden=\"true\">&times;</span>
+                            </button>
+                        </div>";
+                }
+
+                ?>
+
             </div>
 
         </div>
