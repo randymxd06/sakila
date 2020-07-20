@@ -15,10 +15,10 @@ $personales = obtenerPersonal($conexion);
 
 
 //Declaro variables para obtener informacion//
-$personal = $_GET['personal'] ?? "";
-$direccion = $_GET['direccion'] ?? "";
+$personal = $_POST['personal'] ?? "";
+$direccion = $_POST['direccion'] ?? "";
 
-if(isset($_GET['btnGuardarTienda'])){
+if(isset($_POST['btnGuardarTienda'])){
     //Codigo para guardar en la base de datos//
 }
 

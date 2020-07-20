@@ -12,18 +12,18 @@ $peliculas = obtenerPeliculas($conexion);
 $idiomas = obtenerIdiomas($conexion);
 
 //Declaro variables para obtener datos//
-$pelicula = $_GET['pelicula'] ?? "";
-$descripcion = $_GET['descripcion'] ?? "";
-$añoLanzamiento = $_GET['añoLanzamiento'] ?? "";
-$idioma = $_GET['idioma'] ?? "";
-$duracionAlquiler = $_GET['duracionAlquiler'] ?? "";
-$tarifaAlquiler = $_GET['tarifaAlquiler'] ?? "";
-$costoReemplazo = $_GET['costoReemplazo'] ?? "";
-$clasificacion = $_GET['clasificacion'] ?? "";
-$duracionPelicula = $_GET['duracionPelicula'] ?? "";
-$caracteristicasPelicula = $_GET['caracteristicasPelicula'] ?? "";
+$pelicula = $_POST['pelicula'] ?? "";
+$descripcion = $_POST['descripcion'] ?? "";
+$añoLanzamiento = $_POST['añoLanzamiento'] ?? "";
+$idioma = $_POST['idioma'] ?? "";
+$duracionAlquiler = $_POST['duracionAlquiler'] ?? "";
+$tarifaAlquiler = $_POST['tarifaAlquiler'] ?? "";
+$costoReemplazo = $_POST['costoReemplazo'] ?? "";
+$clasificacion = $_POST['clasificacion'] ?? "";
+$duracionPelicula = $_POST['duracionPelicula'] ?? "";
+$caracteristicasPelicula = $_POST['caracteristicasPelicula'] ?? "";
 
-if(isset($_GET['datetime-local'])){
+if(isset($_POST['datetime-local'])){
     //Codigo para guardar en la base de datos//
 }
 

@@ -16,7 +16,7 @@
 
             <div class="col-md-5">
 
-                <form action="" method="get" >
+                <form action="" method="post" >
 
                     <label class="mt-3" for="nombre">Nombre:</label>
                     <input  type="text" name="nombre" id="nombre" class="form-control" placeholder="Escribe tu nombre">

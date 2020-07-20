@@ -7,9 +7,9 @@ $categorias = obtenerCategorias($conexion);
 
 $nombrePagina = "categoría";
 
-$categoria = $_GET['categoria'] ?? "";
+$categoria = $_POST['categoria'] ?? "";
 
-if(isset($_GET['btnGuardarCategoria'])){
+if(isset($_POST['btnGuardarCategoria'])){
     //Codigo para guardar en la base de datos//
 }
 

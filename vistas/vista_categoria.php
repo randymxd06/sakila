@@ -17,7 +17,7 @@
         <div class="col-md-5">
 
             <div class="row">
-                <form action="" method="get" >
+                <form action="" method="post" >
 
                     <label for="categoria">Nombre de la Categoría:</label>
                     <input  type="text" name="categoria" id="categoria" class="form-control" placeholder="Escribe el nombre de la categoría">

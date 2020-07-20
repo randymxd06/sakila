@@ -17,7 +17,7 @@
         <div class="col-md-5">
 
             <div class="row">
-                <form action="" method="get" >
+                <form action="" method="post" >
 
                     <label class="mt-3" for="personal">Personal:</label>
                     <select class="form-select" name="personal" id="personal">

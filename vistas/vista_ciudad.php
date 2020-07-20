@@ -18,7 +18,7 @@
 
                 <div class="row">
 
-                    <form action="" method="get" >
+                    <form action="" method="post" >
 
                         <label for="pais">Nombre del Ciudad:</label>
                         <input  type="text" name="ciudad" id="ciudad" class="form-control" placeholder="Escribe el nombre de la ciudad">

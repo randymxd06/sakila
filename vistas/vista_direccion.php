@@ -16,7 +16,7 @@
 
         <div class="col-md-5">
 
-            <form action="" method="get" >
+            <form action="" method="post" >
 
                 <label mt-3 for="direccion">Direccion:</label>
                 <input  type="text" name="direccion" id="direccion" class="form-control" placeholder="Escribe tu dirección">

@@ -17,7 +17,7 @@
             <div class="col-md-5">
 
                 <div class="row">
-                    <form action="" method="get" >
+                    <form action="" method="post" >
 
                         <label for="pais">Nombre del País:</label>
                         <input  type="text" name="pais" id="pais" class="form-control" placeholder="Escribe el nombre del país">

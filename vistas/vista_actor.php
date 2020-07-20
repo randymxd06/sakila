@@ -18,7 +18,7 @@
 
             <div class="row">
 
-                <form action="" method="get" >
+                <form action="" method="post" >
 
                     <label for="inputNombreActor">Nombre del Actor: </label>
                     <input  type="text" name="inputNombreActor" id="inputNombreActor" class="form-control" placeholder="Escribe el nombre del actor">

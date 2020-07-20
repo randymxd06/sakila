@@ -7,7 +7,7 @@ require_once "funciones/ayudante.php";
 require_once "modelos/modelo_idioma.php";
 $idiomas = obtenerIdiomas($conexion);
 
-if(isset($_GET['btnGuardarIdioma'])){
+if(isset($_POST['btnGuardarIdioma'])){
     //Codigo para guardar en la base de datos//
 }
 

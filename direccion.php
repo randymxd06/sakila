@@ -11,16 +11,16 @@ require_once "modelos/modelo_direccion.php";
 $direcciones = obtenerDirecciones($conexion);
 $ciudades = obtenerCiudades($conexion);
 
-$direccion = $_GET['direccion'] ?? "";
-$direccion2 = $_GET['direccion2'] ?? "";
-$distrito = $_GET['distrito'] ?? "";
-$ciudad = $_GET['ciudad'] ?? "";
-$codigoPostal = $_GET['codigoPostal'] ?? "";
-$telefono = $_GET['telefono'] ?? "";
-$ubicacion = $_GET['ubicacion'] ?? "";
+$direccion = $_POST['direccion'] ?? "";
+$direccion2 = $_POST['direccion2'] ?? "";
+$distrito = $_POST['distrito'] ?? "";
+$ciudad = $_POST['ciudad'] ?? "";
+$codigoPostal = $_POST['codigoPostal'] ?? "";
+$telefono = $_POST['telefono'] ?? "";
+$ubicacion = $_POST['ubicacion'] ?? "";
 
 //Asegurarnos de que el usuario haya hecho click en el boton Guardar Dirección//
-if(isset($_GET['btnGuardarDireccion'])){
+if(isset($_POST['btnGuardarDireccion'])){
     //Codigo para la base de datos//
 }
 

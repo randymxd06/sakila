@@ -16,7 +16,7 @@
 
             <div class="col-md-5">
 
-                <form action="" method="get" >
+                <form action="" method="post" >
 
                     <label for="pelicula">Título de la película: </label>
                     <input  type="text" name="pelicula" id="pelicula" class="form-control" placeholder="Escribe el título de la película">

@@ -17,7 +17,7 @@
             <div class="col-md-5">
 
                 <div class="row">
-                    <form action="" method="get" >
+                    <form action="" method="post" >
 
                         <label for="idioma">Nombre del Idioma:</label>
                         <input  type="text" name="idioma" id="idioma" class="form-control" placeholder="Escribe el nombre del idioma">

@@ -13,10 +13,10 @@ $paises = obtenerPaises($conexion);
 
 
 //Declaro variables para obtener los datos//
-$ciudad = $_GET['ciudad'] ?? "";
-$pais = $_GET['pais'] ?? "";
+$ciudad = $_POST['ciudad'] ?? "";
+$pais = $_POST['pais'] ?? "";
 
-if(isset($_GET['btnGuardarCiudad'])){
+if(isset($_POST['btnGuardarCiudad'])){
     //Codigo para guardar en la base de datos//
 }
 //Incluir la vista//

@@ -25,14 +25,14 @@ if(isset($_POST['btnGuardarDatos'])){
         throw new Error("El apellido del actor esta vacio, porfavor llenarlo");
     }
     
-        $datos = [
-            'inputNombreActor' => $nombreActor,
-            'inputApellidoActor' => $apellidoActor
-        ];
+    $datos = [
+        'inputNombreActor' => $nombreActor,
+        'inputApellidoActor' => $apellidoActor
+    ];
 
-        //$datos = compact('nombreActor', 'apellidoActor');
+    //$datos = compact('nombreActor', 'apellidoActor');
 
-        $insertando = insertarActores($conexion, $datos);
+    $insertando = insertarActores($conexion, $datos);
 
 }//Fin del if//
 
