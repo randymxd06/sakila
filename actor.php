@@ -34,6 +34,7 @@ try {
 
         //Insertar los datos a la base de datos//
         $actorInsertado = insertarActores($conexion, $datos);
+        $mensaje = "Los datos del actor se han insertado correctamente.";
 
         //Lanzar un error si no se insertaron los datos correctamente//
         if(!$actorInsertado){
@@ -41,7 +42,7 @@ try {
         }
 
         //Redireccionar la pagina//
-        header("Location: actor.php", true, 303);
+        redireccionar("actor.php");
 
 
     }//Fin del if//

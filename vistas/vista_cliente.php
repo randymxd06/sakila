@@ -65,22 +65,34 @@
                             <th scope="col">ID del Cliente</th>
                             <th scope="col">ID de la Tienda</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Dirección</th>
+                            <th scope="col">Activo</th>
+                            <th scope="col">Fecha de Creación</th>
                             </thead>
 
                             <tbody>
 
                             <?php
+
                             foreach ($clientes as $cliente){
+
+                                if($cliente['active'] == 'Si'){
+                                    $icono = '<i class="fa fa-check text-success" aria-hidden="true"></i>';
+                                }
+                                else{
+                                    $icono = '<i class=\'fa fa-times text-danger\'></i>';
+                                }
+
                                 echo "<tr>
                                 <th scope=\"row\">{$cliente['customer_id']}</th>
                                 <td>{$cliente['store_id']}</td>
-                                <td>{$cliente['first_name']}</td>
-                                <td>{$cliente['last_name']}</td>
+                                <td>" . ucwords( strtolower($cliente['name']) ) . "</td>
                                 <td>{$cliente['email']}</td>
                                 <td>{$cliente['address']}</td>
+                                <td>{$icono}</td>
+                                <td>{$cliente['fecha']}</td>
+                                
                             </tr>";
                             }
                             ?>

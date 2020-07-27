@@ -21,10 +21,10 @@
                 <form action="" method="post">
 
                     <label for="inputNombreActor">Nombre del Actor: </label>
-                    <input  type="text" name="inputNombreActor" id="inputNombreActor" class="form-control" placeholder="Escribe el nombre del actor">
+                    <input  type="text" name="inputNombreActor" id="inputNombreActor" class="form-control" placeholder="Escribe el nombre del actor" value="<?= $nombreActor ?>">
 
                     <label class="mt-3" for="inputApellidoActor">Apellido del Actor: </label>
-                    <input type="text" name="inputApellidoActor" id="inputApellidoActor" class="form-control" placeholder="Escribe el apellido del actor">
+                    <input type="text" name="inputApellidoActor" id="inputApellidoActor" class="form-control" placeholder="Escribe el apellido del actor" value="<?= $apellidoActor ?>">
 
                     <button type="submit" name="btnGuardarDatos" class="btn btn-secondary mt-3">Guardar Datos</button>
 
@@ -41,9 +41,9 @@
                         </div>";
                 }
 
-                if(isset($actorInsertado)){
+                if(isset($mensaje)){
                     echo "<div class=\"alert alert-success alert-dismissible fade show mt-3\" role=\"alert\">
-                            Los datos del actor se han insertado correctamente.
+                            {$mensaje}
                             <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
                                 <span aria-hidden=\"true\">&times;</span>
                             </button>
@@ -55,6 +55,14 @@
             </div>
 
             <hr>
+
+            <?php if(empty($actores)) { ?>
+
+                <div class="alert alert-info" role="alert">
+                    No hay datos registrados.
+                </div>
+
+            <?php } else { ?>
 
             <div class="row mt-3">
 
@@ -87,6 +95,8 @@
                 </div>
 
             </div>
+
+            <?php } ?>
 
         </div>
 

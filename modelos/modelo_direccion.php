@@ -5,7 +5,7 @@ require_once "config/conexion.php";
 
 function obtenerDirecciones($conexion){
 
-    $sql = "SELECT ad.address_id, ad.address, ad.address2, ad.district, ci.city, ad.postal_code, ad.phone, ad.location
+    $sql = "SELECT ad.address_id, ad.address, ad.address2, ad.district, ci.city, ad.postal_code, ad.phone
     FROM address AS ad
     INNER JOIN city AS ci ON ci.city_id = ad.city_id";
 
