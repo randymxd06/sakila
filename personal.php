@@ -78,7 +78,7 @@ try {
         }
 
         //Redireccionar la pagina//
-        header("Location: personal.php", true, 303);
+        redireccionar("personal.php");
 
     }
 
