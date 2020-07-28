@@ -44,10 +44,6 @@
                 <label class="mt-3" for="telefono">Teléfono:</label>
                 <input type="tel" name="telefono" id="telefono" class="form-control" placeholder="Escribe tu teléfono">
 
-                <label class="mt-3" for="ubicacion">Ubicación:</label>
-                <input type="text" name="ubicacion" id="ubicacion" class="form-control" placeholder="Escribe tu ubicación">
-
-
                 <button type="submit" name="btnGuardarDireccion" class="btn btn-secondary mt-4">Guardar Datos</button>
 
             </form>
@@ -68,7 +64,6 @@
                         <th scope="col">Ciudad</th>
                         <th scope="col">Código Postal</th>
                         <th scope="col">Teléfono</th>
-                        <th scope="col">Ubicación</th>
                         </thead>
 
                         <tbody>
@@ -83,7 +78,6 @@
                                 <td>{$direccion['city']}</td>
                                 <td>{$direccion['postal_code']}</td>
                                 <td>{$direccion['phone']}</td>
-                                <td>{$direccion['location']}</td>
                             </tr>";
                         }
                         ?>

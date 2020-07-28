@@ -17,7 +17,6 @@ $distrito = $_POST['distrito'] ?? "";
 $ciudad = $_POST['ciudad'] ?? "";
 $codigoPostal = $_POST['codigoPostal'] ?? "";
 $telefono = $_POST['telefono'] ?? "";
-$ubicacion = $_POST['ubicacion'] ?? "";
 
 //Asegurarnos de que el usuario haya hecho click en el boton Guardar Dirección//
 if(isset($_POST['btnGuardarDireccion'])){
