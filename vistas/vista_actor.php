@@ -21,10 +21,18 @@
                 <form action="" method="post">
 
                     <label for="inputNombreActor">Nombre del Actor: </label>
-                    <input  type="text" name="inputNombreActor" id="inputNombreActor" class="form-control" placeholder="Escribe el nombre del actor" value="<?= $nombreActor ?>">
+                    <input  type="text" name="inputNombreActor" id="inputNombreActor"
+                            class="form-control <?php echo isset($validaciones['errorNombre']) ? 'is-invalid' : '' ?>" placeholder="Escribe el nombre del actor" value="<?= $nombreActor ?>">
+                    <div class="invalid-feedback">
+                        <?php echo $validaciones['errorNombre'] ?? ""; ?>
+                    </div>
 
                     <label class="mt-3" for="inputApellidoActor">Apellido del Actor: </label>
-                    <input type="text" name="inputApellidoActor" id="inputApellidoActor" class="form-control" placeholder="Escribe el apellido del actor" value="<?= $apellidoActor ?>">
+                    <input type="text" name="inputApellidoActor" id="inputApellidoActor"
+                           class="form-control <?php echo isset($validaciones['errorApellido']) ? 'is-invalid' : '' ?>" placeholder="Escribe el apellido del actor" value="<?= $apellidoActor ?>">
+                    <div class="invalid-feedback">
+                        <?php echo $validaciones['errorApellido'] ?? ""; ?>
+                    </div>
 
                     <button type="submit" name="btnGuardarDatos" class="btn btn-secondary mt-3">Guardar Datos</button>
 
@@ -68,29 +76,38 @@
 
                 <div class="col-md-12">
 
-                    <table class="table table-striped table-hover">
+                    <form action="" method="post">
 
-                        <thead>
+                        <table class="table table-striped table-hover">
+
+                            <thead>
                             <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
-                        </thead>
+                            <th scope="col">Acciones</th>
+                            </thead>
 
-                        <tbody>
+                            <tbody>
 
-                        <?php
-                            foreach ($actores as $actor){
+                            <?php
+                            foreach ($actores as $actor) {
                                 echo "<tr>
-                                <th scope=\"row\">{$actor['actor_id']}</th>
-                                <td>{$actor['first_name']}</td>
-                                <td>{$actor['last_name']}</td>
-                            </tr>";
+                                         <th scope=\"row\">{$actor['actor_id']}</th>
+                                         <td>{$actor['first_name']}</td>
+                                         <td>{$actor['last_name']}</td>
+                                         <td>
+                                         <button class='btn btn-outline-danger btn-sm' title='Eliminar actor' name='eliminar' value='{$actor['actor_id']}'><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button>
+                                         <button class='btn btn-outline-info btn-sm' title='Editar actor'><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
+                                         </td>
+                                     </tr>";
                             }
-                        ?>
+                            ?>
 
-                        </tbody>
+                            </tbody>
 
-                    </table>
+                        </table>
+
+                    </form>
 
                 </div>
 

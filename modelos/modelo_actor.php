@@ -17,3 +17,17 @@ function insertarActores($conexion, $datos){
     return $conexion->prepare($sql)->execute($datos);
 
 }
+
+function eliminarActores($conexion, $datos){
+
+    $sql = "DELETE FROM film_actor WHERE actor_id = :id;
+            DELETE FROM actor WHERE actor_id = :id;";
+
+    /*$sentencia = $conexion->prepare($sql);
+    $sentencia->bindValue('actor_id', $datos['id']);
+
+    return $sentencia->execute();*/
+
+    return $conexion->prepare($sql)->execute($datos);
+
+}

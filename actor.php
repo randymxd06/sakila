@@ -16,12 +16,17 @@ try {
     //Asegurarnos de que el usuario haya hecho click en el boton Guardar Datos//
     if (isset($_POST['btnGuardarDatos'])) {
 
+        $validaciones = [];
+
         //Valido que los campos no estén vacíos//
         if (empty($nombreActor)) {
-            throw new Exception("El nombre del actor no puede estar vacío");
+            $validaciones['errorNombre'] = ("El nombre del actor no puede estar vacío");
         }
         if (empty($apellidoActor)) {
-            throw new Exception("El apellido del actor no puede estar vacío");
+            $validaciones['errorApellido'] = ("El apellido del actor no puede estar vacío");
+        }
+        if(!empty($validaciones)){
+            throw new Exception("Verifique que los campos no estén vacíos");
         }
 
         //Preparar array con los datos//
@@ -46,6 +51,75 @@ try {
 
 
     }//Fin del if//
+
+    //Comentar
+    if(isset($_POST['eliminar'])){ //Metodo post//
+
+        $id = $_POST['eliminar'] ?? "";
+
+        //Validar//
+        if(empty($id)){
+            throw new Exception("El id del actor no puede estar vacío");
+        }
+
+        //Preparar array//
+        $datos = [
+            'id' => $id
+        ];
+
+        //Eliminar//
+        $eliminando = eliminarActores($conexion, $datos);
+        $mensaje = "Los datos fueron eliminados correctamente";
+
+        //Lanzar error//
+        if(!$eliminando){
+            throw new Exception("Los datos no se eliminaron correctamente");
+        }
+
+        //Redireccionar la pagina//
+        redireccionar("actor.php");
+
+    }
+
+    // Código para eliminar //
+    /*if(isset($_GET['accion'])){ //Metodo GET//
+
+        //Codigo para eliminar//
+        if(($_GET['accion'] == 'eliminar')){
+
+            $id = $_GET['id'] ?? "";
+
+            //Validar los datos//
+            if(empty($id)){
+                throw new Exception("El valor del id esta vacío");
+            }
+
+            //Preparar el array con los datos//
+            $datos = [
+                'id' => $id
+            ];
+
+            //Eliminar los datos//
+            $eliminando = eliminarActores($conexion, $datos);
+            $mensaje = "Datos eliminados correctamente";
+
+            //Lanzar un error si no se eliminaron los datos//
+            if(!$eliminando){
+                throw new Exception("No se pudo eliminar los datos");
+            }
+
+            //Redireccionar la pagina//
+            redireccionar("actor.php");
+
+
+
+        }
+
+
+
+    }*/
+
+
 
 } catch (Exception $e) {
     $error = $e->getMessage();
