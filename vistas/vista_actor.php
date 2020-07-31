@@ -20,6 +20,8 @@
 
                 <form action="" method="post">
 
+                    <input type="hidden" name="idActor" value="<?= $idActor ?>">
+
                     <label for="inputNombreActor">Nombre del Actor: </label>
                     <input  type="text" name="inputNombreActor" id="inputNombreActor"
                             class="form-control <?php echo isset($validaciones['errorNombre']) ? 'is-invalid' : '' ?>" placeholder="Escribe el nombre del actor" value="<?= $nombreActor ?>">
@@ -34,7 +36,9 @@
                         <?php echo $validaciones['errorApellido'] ?? ""; ?>
                     </div>
 
-                    <button type="submit" name="btnGuardarDatos" class="btn btn-secondary mt-3">Guardar Datos</button>
+                    <div class="mt-3">
+                        <button type="submit" name="btnGuardarDatos" class="btn btn-secondary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
+                    </div>
 
                 </form>
 
@@ -97,7 +101,7 @@
                                          <td>{$actor['last_name']}</td>
                                          <td>
                                          <button class='btn btn-outline-danger btn-sm' title='Eliminar actor' name='eliminar' value='{$actor['actor_id']}'><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button>
-                                         <button class='btn btn-outline-info btn-sm' title='Editar actor'><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
+                                         <button class='btn btn-outline-info btn-sm' title='Editar actor' name='editar' value='{$actor['actor_id']}'><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
                                          </td>
                                      </tr>";
                             }

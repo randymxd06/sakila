@@ -119,7 +119,7 @@
 
                     </div>
 
-                    <button type="submit" name="btnGuardarPelicula" class="btn btn-secondary mt-3">Guardar Datos</button>
+                    <button type="submit" name="btnGuardarPelicula" class="btn btn-secondary mt-3"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                 </form>
 

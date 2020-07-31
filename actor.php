@@ -6,6 +6,7 @@ require_once "funciones/ayudante.php";
 require_once "modelos/modelo_actor.php";
 
 //Declarar variables//
+$idActor = $_POST['idActor'] ?? "";
 $nombreActor = $_POST['inputNombreActor'] ?? "";
 $apellidoActor = $_POST['inputApellidoActor'] ?? "";
 $btnGuardadDatos = $_POST['btnGuardarDatos'] ?? "";
@@ -37,13 +38,31 @@ try {
 
         //$datos = compact('nombreActor', 'apellidoActor');
 
-        //Insertar los datos a la base de datos//
-        $actorInsertado = insertarActores($conexion, $datos);
-        $mensaje = "Los datos del actor se han insertado correctamente.";
+        if (empty($idActor)) {
 
-        //Lanzar un error si no se insertaron los datos correctamente//
-        if(!$actorInsertado){
-            throw new Exception("Ocurrió un error al insertar los datos del autor");
+            //Insertar los datos a la base de datos//
+            $actorInsertado = insertarActores($conexion, $datos);
+
+            //Lanzar un error si no se insertaron los datos correctamente//
+            $mensaje = "Los datos del actor se han insertado correctamente.";
+
+            if (!$actorInsertado) {
+                throw new Exception("Ocurrió un error al insertar los datos del autor");
+            }
+
+        } else {
+
+            //Agregar el id al array datos//
+            $datos['idActor'] = $idActor;
+
+            //Actualizar datos//
+            $actorEditado = editarActores($conexion, $datos);
+            $mensaje = "Los datos fueron editados correctamente";
+
+            if(!$actorEditado){
+                throw new Exception("Ocurrió un error al editar los datos");
+            }
+
         }
 
         //Redireccionar la pagina//
@@ -52,19 +71,19 @@ try {
 
     }//Fin del if//
 
-    //Comentar
+    // Código para eliminar con el método POST //
     if(isset($_POST['eliminar'])){ //Metodo post//
 
-        $id = $_POST['eliminar'] ?? "";
+        $idActor = $_POST['eliminar'] ?? "";
 
         //Validar//
-        if(empty($id)){
+        if(empty($idActor)){
             throw new Exception("El id del actor no puede estar vacío");
         }
 
         //Preparar array//
         $datos = [
-            'id' => $id
+            'idActor' => $idActor
         ];
 
         //Eliminar//
@@ -81,7 +100,25 @@ try {
 
     }
 
-    // Código para eliminar //
+    if(isset($_POST['editar'])){
+
+        $idActor = $_POST['editar'] ?? "";
+        if(empty($idActor)){
+            throw new Exception("El valor del id del actor está vacío");
+        }
+
+        $datos = [
+            'idActor' => $idActor
+        ];
+
+        $resultado = obtenerActorPorId($conexion, $datos);
+
+        $nombreActor = $resultado['first_name'];
+        $apellidoActor = $resultado['last_name'];
+
+    }
+
+    // Código para eliminar con el método GET //
     /*if(isset($_GET['accion'])){ //Metodo GET//
 
         //Codigo para eliminar//
@@ -118,6 +155,7 @@ try {
 
 
     }*/
+
 
 
 

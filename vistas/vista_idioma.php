@@ -23,7 +23,7 @@
                         <label for="idioma">Nombre del Idioma:</label>
                         <input  type="text" name="idioma" id="idioma" class="form-control" placeholder="Escribe el nombre del idioma">
 
-                        <button type="submit" name="btnGuardarIdioma" class="btn btn-secondary mt-4">Guardar Datos</button>
+                        <button type="submit" name="btnGuardarIdioma" class="btn btn-secondary mt-4"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                     </form>
 

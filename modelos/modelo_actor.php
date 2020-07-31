@@ -31,3 +31,21 @@ function eliminarActores($conexion, $datos){
     return $conexion->prepare($sql)->execute($datos);
 
 }
+
+function obtenerActorPorId($conexion, $datos){
+
+
+    $query = $conexion->prepare($sql);
+    $query->execute($datos);
+
+    return $query->fetch();
+
+}
+
+function editarActores($conexion, $datos){
+
+    $sql = "UPDATE actor SET first_name = :nombreActor, last_name = :apellidoActor WHERE actor_id = :idActor;";
+
+    return $conexion->prepare($sql)->execute($datos);
+
+}

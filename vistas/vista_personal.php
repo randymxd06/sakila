@@ -68,7 +68,7 @@
                     <input  type="password" name="contraseña" id="contraseña" class="form-control" placeholder="Escribe tu contraseña">
 
 
-                    <button type="submit" name="btnGuardarPersonal" class="btn btn-secondary mt-3">Guardar Datos</button>
+                    <button type="submit" name="btnGuardarPersonal" class="btn btn-secondary mt-3"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                 </form>
 

@@ -23,7 +23,7 @@
                     <label for="categoria">Nombre de la Categoría:</label>
                     <input  type="text" name="categoria" id="categoria" class="form-control" placeholder="Escribe el nombre de la categoría">
 
-                    <button type="submit" name="btnGuardarCategoria" class="btn btn-secondary mt-4">Guardar Datos</button>
+                    <button type="submit" name="btnGuardarCategoria" class="btn btn-secondary mt-4"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                 </form>
 
