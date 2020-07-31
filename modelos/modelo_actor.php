@@ -34,6 +34,7 @@ function eliminarActores($conexion, $datos){
 
 function obtenerActorPorId($conexion, $datos){
 
+    $sql = "SELECT * FROM actor WHERE actor_id = :idActor;";
 
     $query = $conexion->prepare($sql);
     $query->execute($datos);
