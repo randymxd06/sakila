@@ -20,12 +20,20 @@
 
                     <form action="" method="post" >
 
+                        <input type="hidden" name="idCiudad" value="<?= $idCiudad ?>">
+
                         <label for="pais">Nombre del Ciudad:</label>
-                        <input  type="text" name="ciudad" id="ciudad" class="form-control" placeholder="Escribe el nombre de la ciudad">
+                        <input  type="text" name="ciudad" id="ciudad"
+                                class="form-control <?php echo isset($validaciones['errorCiudad']) ? 'is-invalid' : '' ?> " placeholder="Escribe el nombre de la ciudad" value="<?= $ciudad ?>">
+                        <div class="invalid-feedback">
+                            <?= $validaciones['errorCiudad'] ?? ""; ?>
+                        </div>
 
                         <label class="mt-3" for="pais">País:</label>
-                        <select class="form-select" name="pais" id="pais">
+                        <select class="form-select <?php echo isset($validaciones['errorPais']) ? 'is-invalid' : '' ?>" name="pais" id="pais" value="<?= $pais ?>">
+
                             <option value="">Selecciona un país</option>
+
                             <?php
 
                             foreach ($paises as $pais)
@@ -35,6 +43,9 @@
 
                         </select>
 
+                        <div class="invalid-feedback">
+                            <?= $validaciones['errorPais'] ?? ""; ?>
+                        </div>
 
                         <button type="submit" name="btnGuardarCiudad" class="btn btn-secondary mt-4"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
@@ -51,9 +62,9 @@
                         </div>";
                     }
 
-                    if(isset($ciudadInsertada)){
+                    if(isset($mensaje)){
                         echo "<div class=\"alert alert-success alert-dismissible fade show mt-3\" role=\"alert\">
-                            Los datos de la ciudad se han insertado correctamente.
+                            {$mensaje}
                             <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
                                 <span aria-hidden=\"true\">&times;</span>
                             </button>
@@ -66,37 +77,56 @@
 
                 <hr>
 
+                <?php if(empty($ciudades)) { ?>
+
+                    <div class="alert alert-info" role="alert">
+                        No hay datos registrados.
+                    </div>
+
+                <?php } else { ?>
+
                 <div class="row mt-3">
 
                     <div class="col-md-12">
 
-                        <table class="table table-striped table-hover">
+                        <form action="" method="post">
 
-                            <thead>
-                            <th scope="col">ID de la ciudad</th>
-                            <th scope="col">Nombre de la ciudad</th>
-                            <th scope="col">Nombre del pais</th>
-                            </thead>
+                            <table class="table table-striped table-hover">
 
-                            <tbody>
+                                <thead>
+                                <th scope="col">ID de la ciudad</th>
+                                <th scope="col">Nombre de la ciudad</th>
+                                <th scope="col">Nombre del pais</th>
+                                <th scope="col">Acciones</th>
+                                </thead>
 
-                            <?php
-                            foreach ($ciudades as $ciudad){
-                                echo "<tr>
-                                <th scope=\"row\">{$ciudad['city_id']}</th>
-                                <td>{$ciudad['city']}</td>
-                                <td>{$ciudad['country']}</td>
-                            </tr>";
-                            }
-                            ?>
+                                <tbody>
 
-                            </tbody>
+                                <?php
+                                foreach ($ciudades as $ciudad) {
+                                    echo "<tr>
+                                          <th scope=\"row\">{$ciudad['city_id']}</th>
+                                          <td>{$ciudad['city']}</td>
+                                          <td>{$ciudad['country']}</td>
+                                          <td>
+                                              <button class='btn btn-outline-danger btn-sm' title='Eliminar ciudad' name='eliminar' value='{$ciudad['city_id']}'><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button>
+                                              <button class='btn btn-outline-info btn-sm' title='Editar ciudad' name='editar' value='{$ciudad['city_id']}'><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
+                                          </td>
+                                    </tr>";
+                                }
+                                ?>
 
-                        </table>
+                                </tbody>
+
+                            </table>
+
+                        </form>
 
                     </div>
 
                 </div>
+
+                <?php } ?>
 
             </div>
 

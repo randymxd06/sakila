@@ -4,6 +4,8 @@ $nombrePagina = "personal";
 
 require_once "funciones/ayudante.php";
 
+require_once "modelos/modelo_personal.php";
+$personales = obtenerPersonal($conexion);
 require_once "modelos/modelo_direccion.php";
 $direcciones = obtenerDirecciones($conexion);
 require_once "modelos/modelo_tienda.php";
@@ -13,12 +15,15 @@ $tiendas = obtenerTiendas($conexion);
 $nombre = $_POST['nombre'] ?? "";
 $apellido = $_POST['apellido'] ?? "";
 $direccion = $_POST['direccion'] ?? "";
-$foto = $_POST['foto'] ?? "";
 $correo = $_POST['correo'] ?? "";
 $tienda = $_POST['tienda'] ?? "";
-$activo = $_POST['activo'] ?? "";
+if(isset($_POST["activo"])){
+    $activo=1;
+}else{
+    $activo=0;
+}
 $nombreUsuario = $_POST['nombreUsuario'] ?? "";
-$contraseña = $_POST['contraseña'] ?? "";
+$password = $_POST['password'] ?? "";
 
 try {
 
@@ -35,24 +40,16 @@ try {
         if(empty($direccion)){
             throw new Exception("Debe seleccionar una dirección");
         }
-        if(empty($foto)){
-            throw new Exception("Debe insertar una foto");
-        }
         if(empty($correo)){
             throw new Exception("El correo no puede estar vacío");
         }
         if(empty($tienda)){
             throw new Exception("Debe seleccionar una tienda");
         }
-        /*
-         if(empty($activo)){
-            throw new Exception("")
-         }
-         */
         if(empty($nombreUsuario)){
             throw new Exception("El nombre de usuario no puede estar vacío");
         }
-        if(empty($contraseña)){
+        if(empty($password)){
             throw new Exception("La contraseña no puede estar vacía");
         }
 
@@ -61,12 +58,11 @@ try {
             'nombre' => $nombre,
             'apellido' => $apellido,
             'direccion' => $direccion,
-            'foto' => $foto,
             'correo' => $correo,
             'tienda' => $tienda,
             'activo' => $activo,
             'nombreUsuario' => $nombreUsuario,
-            'contraseña' => $contraseña
+            'password' => $password
         ];
 
         //Insertar los datos a la base de datos//
@@ -85,6 +81,8 @@ try {
 } catch (Exception $e) {
     $error = $e->getMessage();
 }
+
+$infoPersonales = obtenerInfoPersonales($conexion);
 
 //Incluir la vista//
 include_once "vistas/vista_personal.php";

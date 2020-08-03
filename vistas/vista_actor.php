@@ -26,15 +26,17 @@
                     <input  type="text" name="inputNombreActor" id="inputNombreActor"
                             class="form-control <?php echo isset($validaciones['errorNombre']) ? 'is-invalid' : '' ?>" placeholder="Escribe el nombre del actor" value="<?= $nombreActor ?>">
                     <div class="invalid-feedback">
-                        <?php echo $validaciones['errorNombre'] ?? ""; ?>
+                        <?= $validaciones['errorNombre'] ?? ""; ?>
                     </div>
+
 
                     <label class="mt-3" for="inputApellidoActor">Apellido del Actor: </label>
                     <input type="text" name="inputApellidoActor" id="inputApellidoActor"
                            class="form-control <?php echo isset($validaciones['errorApellido']) ? 'is-invalid' : '' ?>" placeholder="Escribe el apellido del actor" value="<?= $apellidoActor ?>">
                     <div class="invalid-feedback">
-                        <?php echo $validaciones['errorApellido'] ?? ""; ?>
+                        <?= $validaciones['errorApellido'] ?? ""; ?>
                     </div>
+
 
                     <div class="mt-3">
                         <button type="submit" name="btnGuardarDatos" class="btn btn-secondary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>

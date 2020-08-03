@@ -14,22 +14,27 @@ require_once "modelos/modelo_ciudad.php";
 $ciudades = obtenerCiudades($conexion);
 $paises = obtenerPaises($conexion);
 
-
 //Declaro variables para obtener los datos//
 $ciudad = $_POST['ciudad'] ?? "";
 $pais = $_POST['pais'] ?? "";
+$idCiudad = $_POST['idCiudad'] ?? "";
 
 try {
 
     //Me aseguro que el usuario haya hecho click en el boton//
     if (isset($_POST['btnGuardarCiudad'])) {
 
+        $validaciones = [];
+
         //Validar datos//
         if (empty($ciudad)) {
-            throw new Exception("El nombre de la ciudad no puede estar vacío");
+            $validaciones['errorCiudad'] = ("El nombre de la ciudad no puede estar vacío");
         }
         if (empty($pais)) {
-            throw new Exception("Debe seleccionar un país");
+            $validaciones['errorPais'] = ("Debe seleccionar un país");
+        }
+        if(!empty($validaciones)){
+            throw new Exception("Verifique que los campos no estén vacíos");
         }
 
         //Preparar el array con los datos//
@@ -38,16 +43,83 @@ try {
             'pais' => $pais
         ];
 
-        //Insertar datos//
-        $ciudadInsertada = insertarCiudades($conexion, $datos);
+        if (empty($idCiudad)) {
 
-        //Lanzar error si no se ha insertado los datos//
-        if(!$ciudadInsertada){
-            throw new Exception("Ha ocurrido un error al insertar los datos de la ciudad");
+            //Insertar datos//
+            $ciudadInsertada = insertarCiudades($conexion, $datos);
+            $mensaje = "La ciudad se ha insertado correctamente";
+
+            //Lanzar error si no se ha insertado los datos//
+            if (!$ciudadInsertada) {
+                throw new Exception("Ha ocurrido un error al insertar los datos de la ciudad");
+            }
+
+        } else {
+
+            //Agregar el id al array datos//
+            $datos['idCiudad'] = $idCiudad;
+
+            //Actualizar datos//
+            $ciudadEditada = editarCiudad($conexion, $datos);
+            $mensaje = "Los datos fueron editados correctamente";
+
+            if(!$ciudadEditada){
+                throw new Exception("Ocurrió un error al editar los datos");
+            }
+
         }
 
         //Redireccionar la pagina//
-        header("Location: ciudad.php", true, 303);
+        redireccionar("ciudad.php");
+
+    }
+
+    // Código para eliminar con el método POST //
+    if(isset($_POST['eliminar'])){
+
+        $idCiudad = $_POST['eliminar'] ?? "";
+
+        //V alidar//
+        if(empty($idCiudad)){
+            throw new Exception("El id de la ciudad no puede estar vacío");
+        }
+
+        //Preparar array//
+        $datos = [
+            'idCiudad' => $idCiudad
+        ];
+
+        //Eliminar//
+        $eliminando = eliminarCiudades($conexion, $datos);
+        $mensaje = "Los datos fueron eliminados correctamente";
+
+        //Lanzar error//
+        if(!$eliminando){
+            throw new Exception("Los datos no se eliminaron correctamente");
+        }
+
+        //Redireccionar la pagina//
+        redireccionar("ciudad.php");
+
+    }
+
+    //Código para editar//
+    if(isset($_POST['editar'])){
+
+        $idCiudad = $_POST['editar'] ?? "";
+
+        if(empty($idCiudad)){
+            throw new Exception("El valor del id de la ciudad está vacío");
+        }
+
+        $datos = [
+            'idCiudad' => $idCiudad
+        ];
+
+        $resultado = obtenerCiudadPorId($conexion, $datos);
+
+        $ciudad = $resultado['city'];
+        $pais = $resultado['country_id'];
 
     }
 

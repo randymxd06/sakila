@@ -4,7 +4,7 @@ require_once "config/conexion.php";
 
 function obtenerActores($conexion){
 
-    $sql = "SELECT * FROM actor;";
+    $sql = "SELECT * FROM actor ORDER BY actor_id DESC;";
 
     return $conexion->query($sql)->fetchAll();
 
@@ -20,8 +20,8 @@ function insertarActores($conexion, $datos){
 
 function eliminarActores($conexion, $datos){
 
-    $sql = "DELETE FROM film_actor WHERE actor_id = :id;
-            DELETE FROM actor WHERE actor_id = :id;";
+    $sql = "DELETE FROM film_actor WHERE actor_id = :idActor;
+            DELETE FROM actor WHERE actor_id = :idActor;";
 
     /*$sentencia = $conexion->prepare($sql);
     $sentencia->bindValue('actor_id', $datos['id']);
@@ -45,7 +45,7 @@ function obtenerActorPorId($conexion, $datos){
 
 function editarActores($conexion, $datos){
 
-    $sql = "UPDATE actor SET first_name = :nombreActor, last_name = :apellidoActor WHERE actor_id = :idActor;";
+    $sql = "UPDATE actor SET first_name = :inputNombreActor, last_name = :inputApellidoActor WHERE actor_id = :idActor;";
 
     return $conexion->prepare($sql)->execute($datos);
 

@@ -42,10 +42,9 @@ try {
 
             //Insertar los datos a la base de datos//
             $actorInsertado = insertarActores($conexion, $datos);
-
-            //Lanzar un error si no se insertaron los datos correctamente//
             $mensaje = "Los datos del actor se han insertado correctamente.";
 
+            //Lanzar un error si no se insertaron los datos correctamente//
             if (!$actorInsertado) {
                 throw new Exception("Ocurrió un error al insertar los datos del autor");
             }
@@ -72,7 +71,7 @@ try {
     }//Fin del if//
 
     // Código para eliminar con el método POST //
-    if(isset($_POST['eliminar'])){ //Metodo post//
+    if(isset($_POST['eliminar'])){
 
         $idActor = $_POST['eliminar'] ?? "";
 
@@ -102,7 +101,9 @@ try {
 
     if(isset($_POST['editar'])){
 
+        //Código para editar//
         $idActor = $_POST['editar'] ?? "";
+
         if(empty($idActor)){
             throw new Exception("El valor del id del actor está vacío");
         }
@@ -155,9 +156,6 @@ try {
 
 
     }*/
-
-
-
 
 } catch (Exception $e) {
     $error = $e->getMessage();
