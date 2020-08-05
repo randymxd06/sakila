@@ -55,6 +55,7 @@ try {
 
         }
 
+        //Redireccionar la pagina//
         redireccionar("pais.php");
 
     }
