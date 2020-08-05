@@ -125,6 +125,14 @@
 
                 <hr>
 
+                <?php if(empty($peliculas)) { ?>
+
+                    <div class="alert alert-info" role="alert">
+                        No hay datos registrados.
+                    </div>
+
+                <?php } else { ?>
+
                 <div class="row mt-3">
 
                     <div class="col-md-12">
@@ -172,6 +180,8 @@
                     </div>
 
                 </div>
+
+                <?php } ?>
 
             </div>
 

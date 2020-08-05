@@ -17,6 +17,7 @@
         <div class="col-md-5">
 
             <div class="row">
+
                 <form action="" method="post" >
 
                     <label class="mt-3" for="personal">Personal:</label>
@@ -41,9 +42,19 @@
                     <button type="submit" name="btnGuardarTienda" class="btn btn-secondary mt-4"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                 </form>
+
             </div>
 
             <hr>
+
+
+            <?php if(empty($informacionTiendas)) { ?>
+
+                <div class="alert alert-info" role="alert">
+                    No hay datos registrados.
+                </div>
+
+            <?php } else { ?>
 
             <div class="row">
 
@@ -79,6 +90,8 @@
                 </div>
 
             </div>
+
+            <?php } ?>
 
         </div>
 

@@ -124,6 +124,7 @@
 <hr>
 
 <div class="container">
+
     <?php if(empty($infoPersonales)) { ?>
 
         <div class="alert alert-info" role="alert">
