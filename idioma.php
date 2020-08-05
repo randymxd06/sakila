@@ -102,6 +102,7 @@ try {
             throw new Exception("El valor del id del idioma está vacío");
         }
 
+        //Preparar el array con los datos//
         $datos = [
             'idIdioma' => $idIdioma
         ];

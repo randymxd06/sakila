@@ -5,7 +5,7 @@ require_once "config/conexion.php";
 //Funcion para obtener los paises//
 function obtenerIdiomas($conexion){
 
-    $sql = "SELECT language_id, name FROM language;";
+    $sql = "SELECT language_id, name FROM language ORDER BY language_id DESC;";
 
     return $conexion->query($sql)->fetchAll();
 

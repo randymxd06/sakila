@@ -89,8 +89,8 @@
                                              <th scope=\"row\">{$idioma['language_id']}</th>
                                              <td>{$idioma['name']}</td>
                                              <td>
-                                              <button class='btn btn-outline-danger btn-sm' title='Eliminar país' name='eliminar' value='{$idioma['language_id']}'><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button>
-                                              <button class='btn btn-outline-info btn-sm' title='Editar país' name='editar' value='{$idioma['language_id']}'><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
+                                              <button class='btn btn-outline-danger btn-sm' title='Eliminar idioma' name='eliminar' value='{$idioma['language_id']}'><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button>
+                                              <button class='btn btn-outline-info btn-sm' title='Editar idioma' name='editar' value='{$idioma['language_id']}'><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
                                              </td>
                                          </tr>";
                                 }
