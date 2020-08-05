@@ -79,7 +79,7 @@ try {
 
         $idCiudad = $_POST['eliminar'] ?? "";
 
-        //V alidar//
+        //Validar que el id de la ciudad no este vacío//
         if(empty($idCiudad)){
             throw new Exception("El id de la ciudad no puede estar vacío");
         }
@@ -89,7 +89,7 @@ try {
             'idCiudad' => $idCiudad
         ];
 
-        //Eliminar//
+        //Eliminar la ciudad//
         $eliminando = eliminarCiudades($conexion, $datos);
         $mensaje = "Los datos fueron eliminados correctamente";
 
@@ -108,6 +108,7 @@ try {
 
         $idCiudad = $_POST['editar'] ?? "";
 
+        //Validar que no este vacío//
         if(empty($idCiudad)){
             throw new Exception("El valor del id de la ciudad está vacío");
         }
