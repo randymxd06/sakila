@@ -1,5 +1,9 @@
 <?php
 
+if (session_status() == 1) {//El 1 indica que no hay ninguna session//
+    session_start();
+}
+
 // Definir la funcion para el manejo de errores
 function reportarErrores($numero, $mensaje, $archivo, $linea) {
     $codigos = [
@@ -40,4 +44,15 @@ function imprimirArray($array){
 
 function redireccionar($ruta){
     header("Location: {$ruta}", true, 303);
+}
+
+//Manejo de mensajes success usando SESSION//
+if(session_status() == 2){ //El 2 significa que el array SESSION esta funcionando, osea que hay una session//
+
+    $mensaje = $_SESSION['mensaje'] ?? "";
+
+    if(isset($_SESSION['mensaje'])){
+        unset($_SESSION['mensaje']);
+    }
+
 }

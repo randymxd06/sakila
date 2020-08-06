@@ -36,8 +36,16 @@
 
                             <?php
 
-                            foreach ($paises as $pais)
-                                echo "<option value=\"{$pais['country_id']}\">{$pais['country']}</option>"
+                            foreach ($paises as $pais){
+
+                                if($pais['country_id'] == $idPais){
+                                    $seleccionado = "selected";
+                                } else {
+                                    $seleccionado = "";
+                                }
+                                echo "<option {$seleccionado} value=\"{$pais['country_id']}\">{$pais['country']}</option>";
+                            }
+
 
                             ?>
 

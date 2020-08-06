@@ -42,7 +42,7 @@ try {
 
             //Insertar los datos a la base de datos//
             $actorInsertado = insertarActores($conexion, $datos);
-            $mensaje = "Los datos del actor se han insertado correctamente.";
+            $_SESSION['mensaje'] = "Los datos del actor se han insertado correctamente.";
 
             //Lanzar un error si no se insertaron los datos correctamente//
             if (!$actorInsertado) {
@@ -56,7 +56,7 @@ try {
 
             //Actualizar datos//
             $actorEditado = editarActores($conexion, $datos);
-            $mensaje = "Los datos fueron editados correctamente";
+            $_SESSION['mensaje'] = "Los datos fueron editados correctamente";
 
             if(!$actorEditado){
                 throw new Exception("Ocurrió un error al editar los datos");
@@ -87,7 +87,7 @@ try {
 
         //Eliminar//
         $eliminando = eliminarActores($conexion, $datos);
-        $mensaje = "Los datos fueron eliminados correctamente";
+        $_SESSION['mensaje'] = "Los datos fueron eliminados correctamente";
 
         //Lanzar error//
         if(!$eliminando){

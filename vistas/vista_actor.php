@@ -55,7 +55,7 @@
                         </div>";
                 }
 
-                if(isset($mensaje)){
+                if(isset($mensaje) && !empty($mensaje)){
                     echo "<div class=\"alert alert-success alert-dismissible fade show mt-3\" role=\"alert\">
                             {$mensaje}
                             <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">

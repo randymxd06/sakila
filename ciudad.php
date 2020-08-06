@@ -16,7 +16,7 @@ $paises = obtenerPaises($conexion);
 
 //Declaro variables para obtener los datos//
 $ciudad = $_POST['ciudad'] ?? "";
-$pais = $_POST['pais'] ?? "";
+$idPais = $_POST['pais'] ?? "";
 $idCiudad = $_POST['idCiudad'] ?? "";
 
 try {
@@ -30,7 +30,7 @@ try {
         if (empty($ciudad)) {
             $validaciones['errorCiudad'] = ("El nombre de la ciudad no puede estar vacío");
         }
-        if (empty($pais)) {
+        if (empty($idPais)) {
             $validaciones['errorPais'] = ("Debe seleccionar un país");
         }
         if(!empty($validaciones)){
@@ -40,7 +40,7 @@ try {
         //Preparar el array con los datos//
         $datos = [
             'ciudad' => $ciudad,
-            'pais' => $pais
+            'pais' => $idPais
         ];
 
         if (empty($idCiudad)) {
