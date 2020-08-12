@@ -131,33 +131,39 @@
                         No hay datos registrados.
                     </div>
 
-                <?php } else { ?>
+                <?php }?>
 
-                <div class="row mt-3">
+            </div>
 
-                    <div class="col-md-12">
+        </div>
 
-                        <table class="table table-striped table-hover">
+        <?php if(!empty($peliculas)) { ?>
 
-                            <thead>
-                            <th scope="col">ID de la Película</th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Año de lanzamiento</th>
-                            <th scope="col">Idioma</th>
-                            <th scope="col">Idioma Original</th>
-                            <th scope="col">Duración del Alquiler</th>
-                            <th scope="col">Tarifa del Alquiler</th>
-                            <th scope="col">Costo de Reemplazo</th>
-                            <th scope="col">Clasificación</th>
-                            <th scope="col">Duración de la película</th>
-                            <th scope="col">Características de la película</th>
-                            </thead>
+        <div class="row">
 
-                            <tbody>
+            <div class="col-md-12">
 
-                            <?php
-                            foreach ($peliculas as $pelicula){
-                                echo "<tr>
+                <table class="table table-striped table-hover">
+
+                    <thead>
+                    <th scope="col">ID de la Película</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Año de lanzamiento</th>
+                    <th scope="col">Idioma</th>
+                    <th scope="col">Idioma Original</th>
+                    <th scope="col">Duración del Alquiler</th>
+                    <th scope="col">Tarifa del Alquiler</th>
+                    <th scope="col">Costo de Reemplazo</th>
+                    <th scope="col">Clasificación</th>
+                    <th scope="col">Duración de la película</th>
+                    <th scope="col">Características de la película</th>
+                    </thead>
+
+                    <tbody>
+
+                    <?php
+                    foreach ($peliculas as $pelicula){
+                    echo "<tr>
                                 <th scope=\"row\">{$pelicula['film_id']}</th>
                                 <td>{$pelicula['title']}</td>
                                 <td>{$pelicula['release_year']}</td>
@@ -170,22 +176,18 @@
                                 <td>{$pelicula['length']}</td>
                                 <td>{$pelicula['special_features']}</td>
                             </tr>";
-                            }
-                            ?>
+                    }
+                    ?>
 
-                            </tbody>
+                    </tbody>
 
-                        </table>
-
-                    </div>
-
-                </div>
-
-                <?php } ?>
+                </table>
 
             </div>
 
         </div>
+
+        <?php } ?>
 
     </div>
 

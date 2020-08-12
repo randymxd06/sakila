@@ -33,7 +33,7 @@ try {
 
             //Insertar datos//
             $paisInsertado = insertarPaises($conexion, $datos);
-            $mensaje = "El país fue insertado correctamente";
+            $_SESSION['mensaje'] = "El país fue insertado correctamente";
 
             //Lanzar error si no se ha insertado los datos//
             if (!$paisInsertado) {
@@ -47,7 +47,7 @@ try {
 
             //Actualizar datos//
             $paisEditado = editarPaises($conexion, $datos);
-            $mensaje = "Los datos fueron editados correctamente";
+            $_SESSION['mensaje'] = "Los datos fueron editados correctamente";
 
             if (!$paisEditado) {
                 throw new Exception("Ha ocurrido un error al editar los datos");
@@ -77,7 +77,7 @@ try {
 
         //Eliminar el país//
         $eliminando = eliminarPaises($conexion, $datos);
-        $mensaje = "Los datos se eliminaron correctamente";
+        $_SESSION['mensaje'] = "Los datos se eliminaron correctamente";
 
         //Lanzar error//
         if (!$eliminando) {

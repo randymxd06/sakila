@@ -36,7 +36,7 @@ try {
 
             //Insertar los datos a la base de datos//
             $idiomaInsertado = insertarIdiomas($conexion, $datos);
-            $mensaje = "El idioma fue insertado correctamente";
+            $_SESSION['mensaje'] = "El idioma fue insertado correctamente";
 
             //Lanzar un error si no se insertaron los datos correctamente//
             if(!$idiomaInsertado){
@@ -50,7 +50,7 @@ try {
 
             //Actualizar datos//
             $idiomaEditado = editarIdiomas($conexion, $datos);
-            $mensaje = "Los datos fueron editados correctamente";
+            $_SESSION['mensaje'] = "Los datos fueron editados correctamente";
 
             if(!$idiomaEditado){
                 throw new Exception("Ha ocurrido un error al editar los datos");
@@ -80,7 +80,7 @@ try {
 
         //Eliminar el idioma//
         $eliminando = eliminarIdiomas($conexion, $datos);
-        $mensaje = "Los datos se eliminaron correctamente";
+        $_SESSION['mensaje'] = "Los datos se eliminaron correctamente";
 
         //Lanzar error//
         if (!$eliminando) {

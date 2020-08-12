@@ -67,6 +67,7 @@ try {
 
         //Insertar los datos a la base de datos//
         $personalInsertado = insertarPersonal($conexion, $datos);
+        $_SESSION['mensaje'] = "Los datos del personal fueron insertados correctamente";
 
         //Lanzar un error si no se insertaron los datos correctamente//
         if(!$personalInsertado){

@@ -1,11 +1,12 @@
 <?php
 
-if (session_status() == 1) {//El 1 indica que no hay ninguna session//
+if(session_status() == 1){
     session_start();
 }
 
-// Definir la funcion para el manejo de errores
+// Definir la funcion para   el manejo de errores
 function reportarErrores($numero, $mensaje, $archivo, $linea) {
+
     $codigos = [
         1 => "Error fatal",
         2 => "Advertencia",
@@ -18,6 +19,7 @@ function reportarErrores($numero, $mensaje, $archivo, $linea) {
           <hr>
           <span>En la línea <b>{$linea}</b> del archivo <b>{$archivo}</b></span>
         </div>";
+
 }
 
 set_error_handler('reportarErrores');

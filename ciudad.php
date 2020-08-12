@@ -47,7 +47,7 @@ try {
 
             //Insertar datos//
             $ciudadInsertada = insertarCiudades($conexion, $datos);
-            $mensaje = "La ciudad se ha insertado correctamente";
+            $_SESSION['mensaje'] = "La ciudad se ha insertado correctamente";
 
             //Lanzar error si no se ha insertado los datos//
             if (!$ciudadInsertada) {
@@ -61,7 +61,7 @@ try {
 
             //Actualizar datos//
             $ciudadEditada = editarCiudad($conexion, $datos);
-            $mensaje = "Los datos fueron editados correctamente";
+            $_SESSION['mensaje'] = "Los datos fueron editados correctamente";
 
             if(!$ciudadEditada){
                 throw new Exception("Ocurrió un error al editar los datos");
@@ -91,7 +91,7 @@ try {
 
         //Eliminar la ciudad//
         $eliminando = eliminarCiudades($conexion, $datos);
-        $mensaje = "Los datos fueron eliminados correctamente";
+        $_SESSION['mensaje'] = "Los datos fueron eliminados correctamente";
 
         //Lanzar error//
         if(!$eliminando){

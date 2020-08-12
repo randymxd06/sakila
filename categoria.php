@@ -35,7 +35,7 @@ try {
 
             //Insertar los datos a la base de datos//
             $categoriaInsertada = insertarCategorias($conexion, $datos);
-            $mensaje = "La categoria fue insertada correctamente";
+            $_SESSION['mensaje'] = "La categoria fue insertada correctamente";
 
             //Lanzar un error si no se insertaron los datos correctamente//
             if (!$categoriaInsertada) {
@@ -49,7 +49,7 @@ try {
 
             //Actualizar datos//
             $categoriaEditada = editarCategorias($conexion, $datos);
-            $mensaje = "Los datos fueron editados correctamente";
+            $_SESSION['mensaje'] = "Los datos fueron editados correctamente";
 
             if(!$categoriaEditada){
                 throw new Exception("Ha ocurrido un error al editar los datos");
@@ -79,7 +79,7 @@ try {
 
         //Eliminar la categoria//
         $eliminando = eliminarCategorias($conexion, $datos);
-        $mensaje = "Los datos se eliminaron correctamente";
+        $_SESSION['mensaje'] = "Los datos se eliminaron correctamente";
 
         //Lanzar error//
         if (!$eliminando) {

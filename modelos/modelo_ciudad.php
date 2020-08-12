@@ -22,7 +22,7 @@ function insertarCiudades($conexion, $datos){
 }
 
 function eliminarCiudades($conexion, $datos){
-
+    
     $sql = "UPDATE address SET city_id = 1 WHERE city_id = :idCiudad;
             DELETE FROM city WHERE city_id = :idCiudad;";
 
