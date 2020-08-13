@@ -46,7 +46,6 @@
                                 echo "<option {$seleccionado} value=\"{$pais['country_id']}\">{$pais['country']}</option>";
                             }
 
-
                             ?>
 
                         </select>
@@ -67,9 +66,7 @@
 
                 <?php if(empty($ciudades)) { ?>
 
-                    <div class="alert alert-info" role="alert">
-                        No hay datos registrados.
-                    </div>
+                    <?php include_once "partes/parte_info.php" ?>
 
                 <?php } else { ?>
 

@@ -41,9 +41,7 @@
 
             <?php if(empty($categorias)){ ?>
 
-                <div class="alert alert-info" role="alert">
-                    No hay datos registrados.
-                </div>
+                <?php include_once "partes/parte_info.php" ?>
 
             <?php } else { ?>
 

@@ -69,7 +69,6 @@ try {
         //Redireccionar la pagina//
         redireccionar("actor.php");
 
-
     }//Fin del if//
 
     // Código para eliminar con el método POST //
