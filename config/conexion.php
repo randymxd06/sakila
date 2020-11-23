@@ -24,8 +24,8 @@ $errores = [];
 try{
     $conexion = new PDO("mysql:host={$host}; dbname={$dbname}", $usuario, $password);
 }catch(PDOException $exception){
-    throw new Exception("Hubo un error al conectarnos a la base de datos: {$exception->getMessage()}");
-    //array_push($errores, $exception -> getMessage());
+    //throw new Exception("Hubo un error al conectarnos a la base de datos: {$exception->getMessage()}");
+    array_push($errores, $exception -> getMessage());
 }
 
 
